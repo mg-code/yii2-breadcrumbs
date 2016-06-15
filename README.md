@@ -1,2 +1,7 @@
 # yii2-breadcrumbs
-Enhanced breadcrum
+Breadcrumbs with data-vocabulary.org markup (Google rich snippet support).
+
+This is wrapper class of \yii\widgets\Breadcrumbs widget.
+All main functionality is working like before.
+
+[See here](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html) for more information.
