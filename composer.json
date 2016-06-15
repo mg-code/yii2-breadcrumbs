@@ -1,0 +1,23 @@
+{
+    "name": "mg-code/yii2-breadcrumbs",
+    "description": "Breadcrumbs with data-vocabulary.org markup (Google rich snippet support).",
+    "keywords": ["yii2", "extension", "Breadcrumb", "data-vocabulary.org", "rich snippet"],
+    "homepage": "https://github.com/mg-code/yii2-breadcrumbs",
+    "type": "yii2-extension",
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "Maris Graudins",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "mgcode\\breadcrumbs\\": ""
+        }
+    }
+}
