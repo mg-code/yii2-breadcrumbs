@@ -33,7 +33,6 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
         $encodeLabel = ArrayHelper::remove($link, 'encode', $this->encodeLabels);
         if (array_key_exists('label', $link)) {
             $label = $encodeLabel ? Html::encode($link['label']) : $link['label'];
-            $label = Html::tag('span', $label, ['itemprop' => 'title']);
         } else {
             throw new InvalidConfigException('The "label" element is required for each link.');
         }
@@ -44,6 +43,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
             $options = $link;
             $options['itemprop'] = 'url';
             unset($options['template'], $options['label'], $options['url']);
+            $label = Html::tag('span', $label, ['itemprop' => 'title']);
             $link = Html::a($label, $link['url'], $options);
         } else {
             $link = $label;
