@@ -39,14 +39,16 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
         if (isset($link['template'])) {
             $template = $link['template'];
         }
+
+        $labelOptions = ArrayHelper::remove($link, 'labelOptions', []);
         if (isset($link['url'])) {
             $options = $link;
             $options['itemprop'] = 'url';
             unset($options['template'], $options['label'], $options['url']);
-            $label = Html::tag('span', $label, ['itemprop' => 'title']);
+            $label = Html::tag('span', $label, array_merge($labelOptions, ['itemprop' => 'title']));
             $link = Html::a($label, $link['url'], $options);
         } else {
-            $link = $label;
+            $link = Html::tag('span', $label, $labelOptions);
         }
         return strtr($template, ['{link}' => $link]);
     }
