@@ -9,7 +9,6 @@ use yii\helpers\Html;
 /**
  * This is wrapper class of \yii\widgets\Breadcrumbs widget.
  * This widget adds data-vocabulary.org markup.
- *
  * @link https://github.com/mg-code/yii2-breadcrumbs
  * @author Maris Graudins <maris@mg-interactive.lv>
  */
@@ -19,7 +18,12 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
      * @var string the template used to render each inactive item in the breadcrumbs. The token `{link}`
      * will be replaced with the actual HTML link for each inactive item.
      */
-    public $itemTemplate = "<li itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">{link}</li>\n";
+    public $itemTemplate = "<li class=\"breadcrumb-item\" itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">{link}</li>\n";
+    /**
+     * @var string the template used to render each active item in the breadcrumbs. The token `{link}`
+     * will be replaced with the actual HTML link for each active item.
+     */
+    public $activeItemTemplate = "<li class=\"breadcrumb-item active\">{link}</li>\n";
 
     /**
      * Renders a single breadcrumb item.
